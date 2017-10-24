@@ -25,14 +25,25 @@ class ViewController: UIViewController {
         let centerX: CGFloat = screenSize.width/2
         let centerY: CGFloat = screenSize.height/2
         
-        appName.frame = CGRect(x: centerX - 100, y: centerY - 100, width: 200, height: 80)
+        appName.frame = CGRect(x: centerX - 100, y: centerY - 220, width: 200, height: 80)
         appName.text = appNameString
         appName.textAlignment = NSTextAlignment.center
         appName.textColor = UIColor.cyan
-        appName.numberOfLines = 0
-
+        appName.numberOfLines = 0 //this doesn't work how I think it does
+        appName.font = appName.font.withSize(30)
+        appName.backgroundColor = UIColor.purple
+        
+        createNewButton.frame = CGRect(x: centerX - 100, y: centerY - 40, width: 200, height: 80)
+        createNewButton.setTitle("Create New List", for: .normal)
+        createNewButton.backgroundColor = UIColor.cyan
+        
+        selectListButton.frame = CGRect(x: centerX - 100, y: centerY + 140, width: 200, height: 80)
+        selectListButton.setTitle("Choose A List", for: .normal)
+        selectListButton.backgroundColor = UIColor.cyan
         
         self.view.addSubview(appName)
+        self.view.addSubview(createNewButton)
+        self.view.addSubview(selectListButton)
     
     }
     
