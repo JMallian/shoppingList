@@ -10,10 +10,19 @@ import UIKit
 
 //color scheme taken from hexcolors
 //color scheme
-let paleYellow: UIColor = UIColor(red: 254/255, green: 251/255, blue: 216/255, alpha: 1)
-let lightBlue: UIColor = UIColor(red: 213/255, green: 244/255, blue: 230/255, alpha:1)
-let darkBlue: UIColor = UIColor(red: 128/255, green: 206/255, blue: 214/255, alpha: 1)
-let darkGreen: UIColor = UIColor(red: 97/255, green: 134/255, blue: 133/255, alpha: 1)
+var backgroundColor: UIColor = UIColor(red: 254/255, green: 251/255, blue: 216/255, alpha: 1)
+var splashColor: UIColor = UIColor(red: 213/255, green: 244/255, blue: 230/255, alpha:1)
+var buttonBackground: UIColor = UIColor(red: 128/255, green: 206/255, blue: 214/255, alpha: 1)
+var textColor: UIColor = UIColor(red: 97/255, green: 134/255, blue: 133/255, alpha: 1)
+
+let buttonFont: UIFont = UIFont(name: "Times New Roman", size: 30)!
+
+let screenSize: CGSize = UIScreen.main.bounds.size
+let centerX: CGFloat = screenSize.width/2
+let centerY: CGFloat = screenSize.height/2
+
+let buttonWidth: CGFloat = 200
+let buttonHeight: CGFloat = 80
 
 class ViewController: UIViewController {
     let appNameString = "Shopping List"
@@ -21,8 +30,7 @@ class ViewController: UIViewController {
     let createNewButton: UIButton
     let selectListButton: UIButton
     let optionsButton: UIButton
-    
-    let buttonFont: UIFont
+
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         appName = UILabel()
@@ -30,20 +38,15 @@ class ViewController: UIViewController {
         selectListButton = UIButton()
         optionsButton = UIButton()
         
-        buttonFont = UIFont(name: "Times New Roman", size: 30)!
+        
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        let screenSize: CGSize = UIScreen.main.bounds.size
-        let centerX: CGFloat = screenSize.width/2
-        let centerY: CGFloat = screenSize.height/2
         
-        let width: CGFloat = 200
-        let height: CGFloat = 80
-        appName.frame = CGRect(x: centerX - (width/2), y: centerY - 310, width: width, height: height)
-        createNewButton.frame = CGRect(x: centerX - (width/2), y: centerY - 130, width: width, height: 80)
-        selectListButton.frame = CGRect(x: centerX - (width/2), y: centerY + 50, width: width, height: height)
-        optionsButton.frame = CGRect(x: centerX - (width/2), y: centerY + 230, width: width, height: height)
+        appName.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY - 310, width: buttonWidth, height: buttonHeight)
+        createNewButton.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY - 130, width: buttonWidth, height: buttonHeight)
+        selectListButton.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY + 50, width: buttonWidth, height: buttonHeight)
+        optionsButton.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY + 230, width: buttonWidth, height: buttonHeight)
         
         appName.text = appNameString
         appName.textAlignment = NSTextAlignment.center
@@ -63,15 +66,15 @@ class ViewController: UIViewController {
         
         
         //color stuff here
-        self.view.backgroundColor = paleYellow
-        appName.textColor = lightBlue
-        appName.backgroundColor = darkBlue
-        createNewButton.backgroundColor = darkBlue
-        selectListButton.backgroundColor = darkBlue
-        optionsButton.backgroundColor = darkBlue
-        createNewButton.setTitleColor(darkGreen, for: .normal)
-        selectListButton.setTitleColor(darkGreen, for: .normal)
-        optionsButton.setTitleColor(darkGreen, for: .normal)
+        self.view.backgroundColor = backgroundColor
+        appName.textColor = splashColor
+        appName.backgroundColor = buttonBackground
+        createNewButton.backgroundColor = buttonBackground
+        selectListButton.backgroundColor = buttonBackground
+        optionsButton.backgroundColor = buttonBackground
+        createNewButton.setTitleColor(textColor, for: .normal)
+        selectListButton.setTitleColor(textColor, for: .normal)
+        optionsButton.setTitleColor(textColor, for: .normal)
         
         self.view.addSubview(appName)
         self.view.addSubview(createNewButton)
@@ -95,8 +98,6 @@ class ViewController: UIViewController {
     }
     
     @objc func optionsButtonTapped() {
-        print("whoa, whoa, buy me a drink first!")
-        //let vc = OptionsViewController()
         self.present(OptionsViewController(), animated: true, completion: nil)
     }
 

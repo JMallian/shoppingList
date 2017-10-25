@@ -9,17 +9,99 @@
 import UIKit
 
 class OptionsViewController: UIViewController {
+    let option1Button: UIButton
+    let option2Button: UIButton
+    let option3Button: UIButton
+    let option4Button: UIButton
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        option1Button = UIButton()
+        option2Button = UIButton()
+        option3Button = UIButton()
+        option4Button = UIButton()
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        //button dimensions set here
+        option1Button.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY - 310, width: buttonWidth, height: buttonHeight)
+        option2Button.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY - 130, width: buttonWidth, height: buttonHeight)
+        option3Button.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY + 50, width: buttonWidth, height: buttonHeight)
+        option4Button.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY + 230, width: buttonWidth, height: buttonHeight)
+        
+        //button String and font set here
+        option1Button.setTitle("Option1", for: .normal)
+        option1Button.titleLabel?.font = buttonFont
+        option2Button.setTitle("Option2", for: .normal)
+        option2Button.titleLabel?.font = buttonFont
+        option3Button.setTitle("Option3", for: .normal)
+        option3Button.titleLabel?.font = buttonFont
+        option4Button.setTitle("Back", for: .normal)
+        option4Button.titleLabel?.font = buttonFont
+        
+        //add buttons to subview
+        self.view.addSubview(option1Button)
+        self.view.addSubview(option2Button)
+        self.view.addSubview(option3Button)
+        self.view.addSubview(option4Button)
+        
+        //make buttons do things
+        option1Button.addTarget(self, action: #selector(OptionsViewController.option1ButtonTapped), for: UIControlEvents.touchUpInside)
+        option2Button.addTarget(self, action: #selector(OptionsViewController.option2ButtonTapped), for: UIControlEvents.touchUpInside)
+        option3Button.addTarget(self, action: #selector(OptionsViewController.option3ButtonTapped), for: UIControlEvents.touchUpInside)
+        option4Button.addTarget(self, action: #selector(OptionsViewController.goBackButtonTapped), for: UIControlEvents.touchUpInside)
+        
+        setColors()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = lightBlue
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func option1ButtonTapped() {
+        backgroundColor = UIColor(red: 254/255, green: 251/255, blue: 216/255, alpha: 1)
+        splashColor = UIColor(red: 213/255, green: 244/255, blue: 230/255, alpha:1)
+        buttonBackground = UIColor(red: 128/255, green: 206/255, blue: 214/255, alpha: 1)
+        textColor = UIColor(red: 97/255, green: 134/255, blue: 133/255, alpha: 1)
+        setColors()
+    }
+    
+    @objc func option2ButtonTapped() {
+        backgroundColor = UIColor(red: 98/255, green: 37/255, blue: 105/255, alpha: 1)
+        splashColor = UIColor(red: 184/255, green: 169/255, blue: 201/255, alpha:1)
+        buttonBackground = UIColor(red: 214/255, green: 212/255, blue: 224/255, alpha: 1)
+        textColor = UIColor(red: 91/255, green: 154/255, blue: 160/255, alpha: 1)
+        setColors()
+    }
+    
+    @objc func option3ButtonTapped() {
+        
+    }
+    
+    @objc func goBackButtonTapped() {
+        self.present(ViewController(), animated: true, completion: nil)
+        //note: figure out how to make it look like it's coming back from the top
+    }
+    
+    func setColors() {
+        self.view.backgroundColor = backgroundColor
+        option1Button.backgroundColor = buttonBackground
+        option2Button.backgroundColor = buttonBackground
+        option3Button.backgroundColor = buttonBackground
+        option4Button.backgroundColor = buttonBackground
+        option1Button.setTitleColor(textColor, for: .normal)
+        option2Button.setTitleColor(textColor, for: .normal)
+        option3Button.setTitleColor(textColor, for: .normal)
+        option4Button.setTitleColor(textColor, for: .normal)
     }
     
 
