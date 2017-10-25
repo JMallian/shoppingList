@@ -10,10 +10,10 @@ import UIKit
 
 //color scheme taken from hexcolors
 //color scheme
-var backgroundColor: UIColor = UIColor(red: 254/255, green: 251/255, blue: 216/255, alpha: 1)
-var splashColor: UIColor = UIColor(red: 213/255, green: 244/255, blue: 230/255, alpha:1)
-var buttonBackground: UIColor = UIColor(red: 128/255, green: 206/255, blue: 214/255, alpha: 1)
-var textColor: UIColor = UIColor(red: 97/255, green: 134/255, blue: 133/255, alpha: 1)
+//var backgroundColor: UIColor = UIColor(red: 254/255, green: 251/255, blue: 216/255, alpha: 1)
+//var splashColor: UIColor = UIColor(red: 213/255, green: 244/255, blue: 230/255, alpha:1)
+//var buttonBackground: UIColor = UIColor(red: 128/255, green: 206/255, blue: 214/255, alpha: 1)
+//var textColor: UIColor = UIColor(red: 97/255, green: 134/255, blue: 133/255, alpha: 1)
 
 let buttonFont: UIFont = UIFont(name: "Times New Roman", size: 30)!
 
@@ -66,15 +66,16 @@ class ViewController: UIViewController {
         
         
         //color stuff here
-        self.view.backgroundColor = backgroundColor
-        appName.textColor = splashColor
-        appName.backgroundColor = buttonBackground
-        createNewButton.backgroundColor = buttonBackground
-        selectListButton.backgroundColor = buttonBackground
-        optionsButton.backgroundColor = buttonBackground
-        createNewButton.setTitleColor(textColor, for: .normal)
-        selectListButton.setTitleColor(textColor, for: .normal)
-        optionsButton.setTitleColor(textColor, for: .normal)
+        let colorsForApp = AppColors()
+        self.view.backgroundColor = colorsForApp.backgroundColor
+        appName.textColor = colorsForApp.splashColor
+        appName.backgroundColor = colorsForApp.componentBackgroundColor
+        createNewButton.backgroundColor = colorsForApp.componentBackgroundColor
+        selectListButton.backgroundColor = colorsForApp.componentBackgroundColor
+        optionsButton.backgroundColor = colorsForApp.componentBackgroundColor
+        createNewButton.setTitleColor(colorsForApp.textColor, for: .normal)
+        selectListButton.setTitleColor(colorsForApp.textColor, for: .normal)
+        optionsButton.setTitleColor(colorsForApp.textColor, for: .normal)
         
         self.view.addSubview(appName)
         self.view.addSubview(createNewButton)
