@@ -11,6 +11,7 @@
 		B501DC0C1F9D693F0062BBDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501DC0B1F9D693F0062BBDF /* ViewController.swift */; };
 		B501DC111F9D693F0062BBDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B501DC101F9D693F0062BBDF /* Assets.xcassets */; };
 		B501DC141F9D693F0062BBDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B501DC121F9D693F0062BBDF /* LaunchScreen.storyboard */; };
+		B58FB0751F9FEB8A000B4EFC /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FB0741F9FEB8A000B4EFC /* OptionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		B501DC101F9D693F0062BBDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B501DC131F9D693F0062BBDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B501DC151F9D693F0062BBDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B58FB0741F9FEB8A000B4EFC /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				B501DC091F9D693F0062BBDF /* AppDelegate.swift */,
 				B501DC0B1F9D693F0062BBDF /* ViewController.swift */,
+				B58FB0741F9FEB8A000B4EFC /* OptionsViewController.swift */,
 				B501DC101F9D693F0062BBDF /* Assets.xcassets */,
 				B501DC121F9D693F0062BBDF /* LaunchScreen.storyboard */,
 				B501DC151F9D693F0062BBDF /* Info.plist */,
@@ -132,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58FB0751F9FEB8A000B4EFC /* OptionsViewController.swift in Sources */,
 				B501DC0C1F9D693F0062BBDF /* ViewController.swift in Sources */,
 				B501DC0A1F9D693F0062BBDF /* AppDelegate.swift in Sources */,
 			);
