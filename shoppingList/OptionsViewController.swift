@@ -87,12 +87,18 @@ class OptionsViewController: UIViewController {
     }
     
     @objc func option3ButtonTapped() {
-        
+        let background = UIColor(red: 255/255, green: 238/255, blue: 173/255, alpha: 1)
+        let text = UIColor(red: 255/255, green: 204/255, blue: 192/255, alpha: 1)
+        let components = UIColor(red: 150/255, green: 206/255, blue: 180/255, alpha: 1)
+        let splash = UIColor(red: 255/255, green: 111/255, blue: 105/255, alpha: 1)
+        let appColors = AppColors(background: background, text: text, component: components, splash: splash)
+        setColors(colors: appColors)
     }
     
     @objc func goBackButtonTapped() {
-        self.present(ViewController(), animated: true, completion: nil)
+        //self.present(ViewController(), animated: true, completion: nil)
         //note: figure out how to make it look like it's coming back from the top
+        self.dismiss(animated: true, completion: nil)
     }
     
     func setColors(colors: AppColors) {
