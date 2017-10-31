@@ -81,6 +81,9 @@ class OptionsViewController: UIViewController {
         let components = UIColor(red: 128/255, green: 206/255, blue: 214/255, alpha: 1)
         let splash = UIColor(red: 213/255, green: 244/255, blue: 230/255, alpha:1)
         let appColors = AppColors(background: background, text: text, component: components, splash: splash)
+        
+        clearButtons()
+        option1Button.setTitle("enabled", for: .normal)
         setColors(colors: appColors)
     }
     
@@ -90,6 +93,9 @@ class OptionsViewController: UIViewController {
         let components = UIColor(red: 214/255, green: 212/255, blue: 224/255, alpha: 1)
         let splash = UIColor(red: 184/255, green: 169/255, blue: 201/255, alpha:1)
         let appColors = AppColors(background: background, text: text, component: components, splash: splash)
+        
+        clearButtons()
+        option2Button.setTitle("enabled", for: .normal)
         setColors(colors: appColors)
     }
     
@@ -99,6 +105,9 @@ class OptionsViewController: UIViewController {
         let components = UIColor(red: 150/255, green: 206/255, blue: 180/255, alpha: 1)
         let splash = UIColor(red: 255/255, green: 111/255, blue: 105/255, alpha: 1)
         let appColors = AppColors(background: background, text: text, component: components, splash: splash)
+        
+        clearButtons()
+        option3Button.setTitle("enabled", for: .normal)
         setColors(colors: appColors)
     }
     
@@ -120,6 +129,12 @@ class OptionsViewController: UIViewController {
         option2Button.setTitleColor(colors.textColor, for: .normal)
         option3Button.setTitleColor(colors.textColor, for: .normal)
         option4Button.setTitleColor(colors.textColor, for: .normal)
+    }
+    
+    func clearButtons() {
+        option1Button.setTitle("Option1", for: .normal)
+        option2Button.setTitle("Option2", for: .normal)
+        option3Button.setTitle("Option3", for: .normal)
     }
     
 
