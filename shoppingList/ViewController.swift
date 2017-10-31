@@ -14,7 +14,9 @@ let screenSize: CGSize = UIScreen.main.bounds.size
 let centerX: CGFloat = screenSize.width/2
 let centerY: CGFloat = screenSize.height/2
 
-let buttonWidth: CGFloat = 200
+let height: CGFloat = screenSize.height
+
+let buttonWidth: CGFloat = screenSize.width
 let buttonHeight: CGFloat = 80
 
 class ViewController: UIViewController {
@@ -36,10 +38,10 @@ class ViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         
-        appName.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY - 310, width: buttonWidth, height: buttonHeight)
-        createNewButton.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY - 130, width: buttonWidth, height: buttonHeight)
-        selectListButton.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY + 50, width: buttonWidth, height: buttonHeight)
-        optionsButton.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY + 230, width: buttonWidth, height: buttonHeight)
+        appName.frame = CGRect(x: centerX - (buttonWidth/2), y: 30, width: buttonWidth, height: buttonHeight)
+        createNewButton.frame = CGRect(x: centerX - (buttonWidth/2), y: 140, width: buttonWidth, height: buttonHeight)
+        selectListButton.frame = CGRect(x: centerX - (buttonWidth/2), y: 225, width: buttonWidth, height: buttonHeight)
+        optionsButton.frame = CGRect(x: centerX - (buttonWidth/2), y: 310, width: buttonWidth, height: buttonHeight)
         
         appName.text = appNameString
         appName.textAlignment = NSTextAlignment.center

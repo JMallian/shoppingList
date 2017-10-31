@@ -9,12 +9,14 @@
 import UIKit
 
 class OptionsViewController: UIViewController {
+    let colorSchemeLabel: UILabel
     let option1Button: UIButton
     let option2Button: UIButton
     let option3Button: UIButton
     let option4Button: UIButton
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        colorSchemeLabel = UILabel()
         option1Button = UIButton()
         option2Button = UIButton()
         option3Button = UIButton()
@@ -22,13 +24,17 @@ class OptionsViewController: UIViewController {
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        //button dimensions set here
-        option1Button.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY - 310, width: buttonWidth, height: buttonHeight)
-        option2Button.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY - 130, width: buttonWidth, height: buttonHeight)
-        option3Button.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY + 50, width: buttonWidth, height: buttonHeight)
-        option4Button.frame = CGRect(x: centerX - (buttonWidth/2), y: centerY + 230, width: buttonWidth, height: buttonHeight)
+        //dimensions set here
+        colorSchemeLabel.frame = CGRect(x: centerX - (buttonWidth/2), y: 30, width: buttonWidth, height: buttonHeight)
+        option1Button.frame = CGRect(x: centerX - (buttonWidth/2), y: 140, width: buttonWidth, height: buttonHeight)
+        option2Button.frame = CGRect(x: centerX - (buttonWidth/2), y: 225, width: buttonWidth, height: buttonHeight)
+        option3Button.frame = CGRect(x: centerX - (buttonWidth/2), y: 310, width: buttonWidth, height: buttonHeight)
+        option4Button.frame = CGRect(x: centerX - (buttonWidth/2), y: height-85, width: buttonWidth, height: buttonHeight)
         
-        //button String and font set here
+        //Strings and font set here
+        colorSchemeLabel.text = "Choose Color Scheme"
+        colorSchemeLabel.textAlignment = NSTextAlignment.center
+        colorSchemeLabel.font = colorSchemeLabel.font.withSize(30)
         option1Button.setTitle("Option1", for: .normal)
         option1Button.titleLabel?.font = buttonFont
         option2Button.setTitle("Option2", for: .normal)
@@ -38,7 +44,8 @@ class OptionsViewController: UIViewController {
         option4Button.setTitle("Back", for: .normal)
         option4Button.titleLabel?.font = buttonFont
         
-        //add buttons to subview
+        //add components to subview
+        self.view.addSubview(colorSchemeLabel)
         self.view.addSubview(option1Button)
         self.view.addSubview(option2Button)
         self.view.addSubview(option3Button)
@@ -103,6 +110,8 @@ class OptionsViewController: UIViewController {
     
     func setColors(colors: AppColors) {
         self.view.backgroundColor = colors.backgroundColor
+        colorSchemeLabel.textColor = colors.splashColor
+        colorSchemeLabel.backgroundColor = colors.componentBackgroundColor
         option1Button.backgroundColor = colors.componentBackgroundColor
         option2Button.backgroundColor = colors.componentBackgroundColor
         option3Button.backgroundColor = colors.componentBackgroundColor
@@ -114,14 +123,6 @@ class OptionsViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
