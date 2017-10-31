@@ -28,10 +28,6 @@ struct AppColors {
         componentBackgroundColor = component
         splashColor = splash
     }
-    
-    mutating func setBackgroundColor(color: UIColor) {
-        backgroundColor = color
-    }
 }
 
 
